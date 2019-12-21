@@ -6,7 +6,7 @@ This is a collection of games of chance, including:
   * Coin flipper
 
   <img src="dice.png" width="200" height="100">
-<span style="color: white;">:</span>.
+<span style="color: white;"> : </span>
   <img src="coin_flip.jpg" width="200" height="100">
 
 ## Languages and packages

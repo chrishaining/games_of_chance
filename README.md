@@ -6,8 +6,8 @@ This is a collection of games of chance, including:
   * Coin flipper
 
   <img src="dice.png" width="200" height="100">
+  <img src="dice.png" width="200" height="100">
   
-
 ## Languages and packages
 To run these programs you will need Python3 and the following packages:
   * numpy

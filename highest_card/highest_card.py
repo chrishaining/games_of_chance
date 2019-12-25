@@ -63,8 +63,9 @@ fill_deck()
 # print(deck)
 # print(deck[-1])
 #randomly select two cards from the deck. One card goes to player1, the other to player2. Make sure that each player gets a different card. This could mean using the sample method to select two cards, putting the two cards into a list and then assigning them to the players. Or I could use the choose method and delete a card from the deck once the card has been chosen.
+card = {}
 def player1_cards():
-    card = random.choice(deck)
+    card.update(random.choice(deck))
     # suit_name = suit.keys()
     # ranks = suit.values()
     # rank = ranks[0]
@@ -75,7 +76,12 @@ def player1_cards():
     return card
 print(player1_cards())
 # player2_card = random.choice(deck)
-
+print(card)
 #find the highest card.
 #1. check the rank of both cards
 #2. elif statement to display "Player1 wins" if player1 card rank is higher; "Player2 wins" if player2 card rank is higher; "It's a draw" if the ranks are the same (possibly make a royal beat a normal ten)
+def find_card_value(card):
+    rank_value = card.values()
+    # value = rank_value
+    return rank_value
+print(find_card_value(card))

@@ -101,7 +101,19 @@ def select_cards():
     player2_random = random.choice(deck)
     deck.remove(player2_random)
     player2_card.update(player2_random)
-    print("Player 1's card is the {}".format(player1_card))
-    print("Player 2's card is the {}".format(player2_card))
-    return deck
+    return "Player1's card is the {player1_card} \nPlayer2's card is the {player2_card}".format(player1_card=player1_card, player2_card=player2_card)
+
 print(select_cards())
+
+#compare the values of the cards
+def find_highest_card(card1, card2):
+    card1_value = find_card_value(card1)
+    card2_value = find_card_value(card2)
+    if card1_value > card2_value:
+        return "Player1 is the winner."
+    elif card2_value > card1_value:
+        return "Player2 is the winner."
+    else:
+        return "It's a draw."
+
+print(find_highest_card(player1_card, player2_card))

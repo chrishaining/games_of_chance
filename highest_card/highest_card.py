@@ -74,7 +74,7 @@ def player1_cards():
     # return "You chose {rank} of {suit_name}.".format(rank=rank, suit_name=suit_name)
     # return suit_name
     return card
-print(player1_cards())
+# print(player1_cards())
 # player2_card = random.choice(deck)
 print(card)
 #find the highest card.
@@ -89,4 +89,19 @@ def find_card_value(card):
     for key, value in rank_score.items():
         rank_points += value
     return rank_points
-print(find_card_value(card))
+# print(find_card_value(card))
+
+#now that I can randomly select one card and get its score, the next step is to decide how to deal with multiple cards. Option A is to have two decks. This is the easy way. Option B is to have one deck, and select two cards. This is harder, and more interesting to me. Within Option B, there are two ways to do it - I could select a sample of cards, or I could use choice twice. Each time, I would then delete the chosen card from the deck.
+player1_card = {}
+player2_card = {}
+def select_cards():
+    player1_random = random.choice(deck)
+    deck.remove(player1_random)
+    player1_card.update(player1_random)
+    player2_random = random.choice(deck)
+    deck.remove(player2_random)
+    player2_card.update(player2_random)
+    print("Player 1's card is the {}".format(player1_card))
+    print("Player 2's card is the {}".format(player2_card))
+    return deck
+print(select_cards())

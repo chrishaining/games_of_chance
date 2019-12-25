@@ -49,25 +49,30 @@ suits = ['CLUBS', 'DIAMONDS', 'HEARTS', 'SPADES']
 #     return deck
 
 deck = []
+# def fill_deck():
+#     for suit in suits:
+#         deck.append({suit: ranks})
+#     return deck
+
 def fill_deck():
     for suit in suits:
-        deck.append({suit: ranks})
-    return deck
+        for rank in ranks:
+            deck.append({suit: rank})
 
 fill_deck()
 # print(deck)
-# print(deck[0])
+# print(deck[-1])
 #randomly select two cards from the deck. One card goes to player1, the other to player2. Make sure that each player gets a different card. This could mean using the sample method to select two cards, putting the two cards into a list and then assigning them to the players. Or I could use the choose method and delete a card from the deck once the card has been chosen.
 def player1_cards():
-    suit = random.choice(deck)
-    suit_name = suit.keys()
-    ranks = suit.values()
+    card = random.choice(deck)
+    # suit_name = suit.keys()
+    # ranks = suit.values()
     # rank = ranks[0]
     # rank = random.choice(ranks)
     # rank = random.choice(list(suit))
     # return "You chose {rank} of {suit_name}.".format(rank=rank, suit_name=suit_name)
     # return suit_name
-    return suit_name
+    return card
 print(player1_cards())
 # player2_card = random.choice(deck)
 

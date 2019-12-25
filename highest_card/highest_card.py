@@ -3,29 +3,73 @@ import random
 
 # Once again, this function should have a parameter that allows a player to bet an amount of money on whether they have a higher card. In this game, there can be a tie. What should be returned if there is a tie?
 
-#create a list of ranks
-ACE = 1
-TWO = 2
-THREE = 3
-FOUR = 4
-FIVE = 5
-SIX = 6
-SEVEN = 7
-EIGHT =8
-NINE = 9
-TEN = 10
-JACK = 10
-QUEEN = 10
-KING = 10
+#create a list of ranks (or dictionary?)
+# ranks = {
+# 'ACE': 1,
+# 'TWO': 2,
+# 'THREE': 3,
+# 'FOUR': 4,
+# 'FIVE': 5,
+# 'SIX': 6,
+# 'SEVEN': 7,
+# 'EIGHT':8,
+# 'NINE': 9,
+# 'TEN': 10,
+# 'JACK': 10,
+# 'QUEEN': 10,
+# 'KING': 10
+# }
 
+ranks = [
+{'ACE': 1},
+{'TWO': 2},
+{'THREE': 3},
+{'FOUR': 4},
+{'FIVE': 5},
+{'SIX': 6},
+{'SEVEN': 7},
+{'EIGHT':8},
+{'NINE': 9},
+{'TEN': 10},
+{'JACK': 10},
+{'QUEEN': 10},
+{'KING': 10}
+]
 
+# print(ranks)
 #create a list of suits
+suits = ['CLUBS', 'DIAMONDS', 'HEARTS', 'SPADES']
+# print(suits)
 
 #combine the two lists to create a dictionary of cards (variable name is deck)
+# deck = {}
+# def fill_deck():
+#     for suit in suits:
+#         deck.update({suit: ranks})
+#     return deck
 
+deck = []
+def fill_deck():
+    for suit in suits:
+        deck.append({suit: ranks})
+    return deck
+
+fill_deck()
+# print(deck)
+# print(deck[0])
 #randomly select two cards from the deck. One card goes to player1, the other to player2. Make sure that each player gets a different card. This could mean using the sample method to select two cards, putting the two cards into a list and then assigning them to the players. Or I could use the choose method and delete a card from the deck once the card has been chosen.
-# player1_card = random.choose(deck)
-# player2_card = random.choose(deck)
+def player1_cards():
+    suit = random.choice(deck)
+    suit_name = suit.keys()
+    ranks = suit.values()
+    # rank = ranks[0]
+    # rank = random.choice(ranks)
+    # rank = random.choice(list(suit))
+    # return "You chose {rank} of {suit_name}.".format(rank=rank, suit_name=suit_name)
+    # return suit_name
+    return suit_name
+print(player1_cards())
+# player2_card = random.choice(deck)
 
 #find the highest card.
 #1. check the rank of both cards

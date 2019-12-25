@@ -82,6 +82,11 @@ print(card)
 #2. elif statement to display "Player1 wins" if player1 card rank is higher; "Player2 wins" if player2 card rank is higher; "It's a draw" if the ranks are the same (possibly make a royal beat a normal ten)
 def find_card_value(card):
     rank_value = card.values()
-    # value = rank_value
-    return rank_value
+    rank_score = {}
+    rank_points = 0
+    for key, value in card.items():
+        rank_score.update(value)
+    for key, value in rank_score.items():
+        rank_points += value
+    return rank_points
 print(find_card_value(card))

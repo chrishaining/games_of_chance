@@ -1,4 +1,6 @@
 import random
+from matplotlib import pyplot as plt
+# import numpy as np
 
 #list of the two possible outcomes of flipping a coin
 possibilities = ["Heads", "Tails"]
@@ -27,4 +29,11 @@ def play_multiple_times(number):
 
 play_multiple_times(10)
 
+total_heads = outcomes.count("Heads")
+total_tails = outcomes.count("Tails")
+total_outcomes = [total_heads, total_tails]
+names = ["Heads", "Tails"]
 
+plt.pie(total_outcomes)
+plt.legend(names)
+plt.show()

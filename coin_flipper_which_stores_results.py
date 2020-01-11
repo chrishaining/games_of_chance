@@ -27,13 +27,23 @@ def play_multiple_times(number):
     play()
   print("The full list of results is {}.".format(outcomes))
 
-play_multiple_times(10)
+play_multiple_times(100)
 
 total_heads = outcomes.count("Heads")
 total_tails = outcomes.count("Tails")
 total_outcomes = [total_heads, total_tails]
 names = ["Heads", "Tails"]
 
-plt.pie(total_outcomes)
+def calculate_probability():
+  heads_probability = outcomes.count("Heads") / len(outcomes)
+  tails_probability = outcomes.count("Tails") / len(outcomes)
+  print("Probability of heads is: {}.".format(heads_probability))
+  print("Probability of tails is: {}.".format(tails_probability))
+
+calculate_probability()
+
+# add probability the pie chart
+
+plt.pie(total_outcomes, autopct='%0.2f%%')
 plt.legend(names)
 plt.show()
